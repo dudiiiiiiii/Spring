@@ -20,4 +20,9 @@ public class HelloController {
     public String aboutUs() {
         return "aboutUs";
     }
+
+    @GetMapping("blog")
+    public String blog() {
+        return "blog/blog";
+    }
 }
