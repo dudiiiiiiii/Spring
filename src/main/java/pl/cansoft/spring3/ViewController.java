@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.cansoft.spring3.models.Article;
 
 @Controller
-public class HelloController {
+public class ViewController {
 
     private List<Article> articles = new ArrayList<>();
 
-    public HelloController() {
+    public ViewController() {
         var now = LocalDateTime.now();
         articles.add(new Article(1L, "Tytuł 1", "Treść 1", now, null));
         articles.add(new Article(2L, "Tytuł 2", "Treść 2", now.minusMonths(2), null));
@@ -24,8 +24,8 @@ public class HelloController {
     }
 
     @GetMapping
-    public String hello() {
-        return "hello";
+    public String home() {
+        return "home";
     }
 
     @GetMapping("contact")
