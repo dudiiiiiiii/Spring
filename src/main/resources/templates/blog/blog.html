@@ -8,12 +8,12 @@
 	<h1>Blog!</h1>
 	<div th:replace="partials/navigation"></div>
 
-	<p>
-		Month: <span th:text="${month}"></span>
-	</p>
-	<p>
-		Content: <span th:text="${content}"></span>
-	</p>
+	<div th:each="item: ${items}">
+		<p>Title: <span th:text="${item.getTitle()}"></span></p>
+		<p>Content: <span th:text="${item.getContent()}"></span></p>
+		<p>Created at: <span th:text="${#temporals.format(item.getCreatedAt(), 'dd-MM-yyyy HH:mm')}"></span></p>
+		<hr/>
+	</div>
 
 	<div th:replace="partials/footer"></div>
 </body>

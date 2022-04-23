@@ -1,21 +1,27 @@
 package pl.cansoft.spring3;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.Map;
+import pl.cansoft.spring3.models.Article;
 
 @Controller
 public class HelloController {
 
-    Map<String, String> blogMap = Map.of(
-        "czerwiec", "Jakiś artykuł z miesiąca Czerwiec",
-        "lipiec", "Jakiś artykuł z miesiąca Lipiec",
-        "sierpień", "Jakiś artykuł z miesiąca Sierpień"
-    );
+    private List<Article> articles = new ArrayList<>();
+
+    public HelloController() {
+        var now = LocalDateTime.now();
+        articles.add(new Article(1L, "Tytuł 1", "Treść 1", now, null));
+        articles.add(new Article(2L, "Tytuł 2", "Treść 2", now.minusMonths(2), null));
+        articles.add(new Article(3L, "Tytuł 3", "Treść 3", now.minusMonths(2), null));
+        articles.add(new Article(4L, "Tytuł 4", "Treść 4", now.minusMonths(3), null));
+        articles.add(new Article(5L, "Tytuł 5", "Treść 5", now.minusMonths(3).minusYears(1), null));
+    }
 
     @GetMapping
     public String hello() {
@@ -33,22 +39,14 @@ public class HelloController {
     }
 
     @GetMapping("blog")
-    public String blog(@RequestParam(required = false) String m, Model model) {
-        if (m != null) {
-            // sprawdzam null ponieważ required = false (m może być nullem)
-            // jeżeli required = true - sprawdzanie nie ma sensu (m nigdy nie będzie nullem)
-            var value = blogMap.get(m);
-            model.addAttribute("content", value);
-        }
-        model.addAttribute("month", m);
-        return "blog/blog";
-    }
-
-    @GetMapping("blog/{month}")
-    public String blogPath(@PathVariable String month, Model model) {
-        var value = blogMap.get(month);
-        model.addAttribute("content", value);
-        model.addAttribute("month", month);
+    public String blog(@RequestParam(required = false) Integer m,
+                       @RequestParam(required = false) Integer y,
+                       Model model) {
+        var filtered = articles.stream()
+            .filter(article -> m == null || article.getCreatedAt().getMonthValue() == m)
+            .filter(article -> y == null || article.getCreatedAt().getYear() == y)
+            .toList();
+        model.addAttribute("items", filtered);
         return "blog/blog";
     }
 }
