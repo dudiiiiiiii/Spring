@@ -18,3 +18,10 @@ Zadanie 1:
 <li>Na zwór parametru "m" dla blog - utwórz możliwość filtrowania po cenie (parametr "p")</li>
 <li>*cena +/- 20%</li>
 </ul>
+Zadanie 2:
+<ul>
+<li>Zmodyfikować zadanie 1 aby filtrować po cenie od-do (parametr "pf" i "pt")</li>
+<li>Wyszukiwanie po nazwie (parametr "n"). Funkcja contains na stringu</li>
+<li>Utworzyć enum z kategorią produktu (telefony, laptopy, tv, monitory)</li>
+<li>Dodać do klasy Produkt pole z enumem z kategorią produktu i umożliwić wyszukiwanie po parametrze "c" np. c=phones</li>
+</ul>
