@@ -1,4 +1,4 @@
-package pl.cansoft.spring3;
+package pl.cansoft.spring3.controllers;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -24,12 +24,12 @@ public class ArticleController {
     }
 
     @GetMapping("blog")
-    public String blog(@RequestParam(required = false) Integer m,
-                       @RequestParam(required = false) Integer y,
+    public String blog(@RequestParam(required = false, name = "m") Integer month,
+                       @RequestParam(required = false, name = "y") Integer year,
                        Model model) {
         var filtered = articles.stream()
-            .filter(article -> m == null || article.getCreatedAt().getMonthValue() == m)
-            .filter(article -> y == null || article.getCreatedAt().getYear() == y)
+            .filter(article -> month == null || article.getCreatedAt().getMonthValue() == month)
+            .filter(article -> year == null || article.getCreatedAt().getYear() == year)
             .toList();
         model.addAttribute("items", filtered);
         return "blog/blog";

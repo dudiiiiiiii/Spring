@@ -1,4 +1,4 @@
-package pl.cansoft.spring3;
+package pl.cansoft.spring3.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
