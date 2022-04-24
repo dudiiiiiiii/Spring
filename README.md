@@ -66,5 +66,6 @@ Zadanie domowe (na 07.05.22):
 <li>Utworzyć ServiceController będący kontrolerem umożliwiającym pokazanie listy usług oraz formularza dodawania usługi (/services i /add-service)</li>
 <li>Dodać w nawigacji możliwość uruchomienia strony "/services" i "/add-service"</li>
 <li>W ServiceController istnieje lista usług wypełniona na wzór ProductController</li>
-<li>Na widoku listy usług dodajemy możliwość filtrowania po kategorii oraz wyszukiwania po nazwie</li>
+<li>Na widoku listy usług dodajemy możliwość filtrowania po kategorii oraz wyszukiwania po nazwie usługi</li>
+<li>Istnieje możliwość wysłania formularza "dodawania nowej usługi" - po dodaniu do listy redirect na listę usług</li>
 </ul>
