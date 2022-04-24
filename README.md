@@ -54,5 +54,4 @@ Zadanie 6:
 <ul>
 <li>Wyświelić na liście artykuów - kategorię artykułu</li>
 <li>Wyświelić na liście produktów - kategorię produktów</li>
-<li></li>
 </ul>
