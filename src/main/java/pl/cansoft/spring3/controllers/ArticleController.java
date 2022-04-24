@@ -32,6 +32,8 @@ public class ArticleController {
             .filter(article -> year == null || article.getCreatedAt().getYear() == year)
             .toList();
         model.addAttribute("items", filtered);
+        model.addAttribute("month", month);
+        model.addAttribute("year", year);
         return "blog/blog";
     }
 }
