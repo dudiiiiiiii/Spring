@@ -25,3 +25,9 @@ Zadanie 2:
 <li>Utworzyć enum z kategorią produktu (telefony, laptopy, tv, monitory)</li>
 <li>Dodać do klasy Produkt pole z enumem z kategorią produktu i umożliwić wyszukiwanie po parametrze "c" np. c=phones</li>
 </ul>
+Zadanie 3:
+<ul>
+<li>Na wzór formularza w zakładce blog dodać formularz filtrujący w zakładce produkty</li>
+<li>Fitrujemy po "pf" i "pt" (input number) oraz "n" i "c" (input text)</li>
+<li>*parametr "c" powinien działać jako select z listą rozwijaną renderowaną z enuma</li>
+</ul>
