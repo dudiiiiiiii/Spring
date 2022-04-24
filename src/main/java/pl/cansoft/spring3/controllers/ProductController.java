@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import pl.cansoft.spring3.models.Product;
 import pl.cansoft.spring3.models.ProductCategory;
@@ -13,6 +14,7 @@ import pl.cansoft.spring3.models.ProductCategory;
 @Controller
 public class ProductController {
 
+    private Long nextId;
     private List<Product> products = new ArrayList<>();
 
     public ProductController() {
@@ -22,6 +24,7 @@ public class ProductController {
         products.add(new Product(3L, "iMac", "Treść 3", 90, ProductCategory.COMPUTERS, now.minusMonths(2), null));
         products.add(new Product(4L, "Apple Watch", "Treść 4", 200, ProductCategory.CLOCK, now.minusMonths(3), null));
         products.add(new Product(5L, "iPhone 13", "Treść 5", 400, ProductCategory.PHONES, now.minusMonths(3).minusYears(1), null));
+        nextId = 6L;
     }
 
     @GetMapping("products")
@@ -59,8 +62,17 @@ public class ProductController {
     }
 
     @GetMapping("add-product")
-    public String addProduct(Model model) {
+    public String addProductForm(Model model) {
         model.addAttribute("categories",  ProductCategory.values());
         return "admin/addProduct";
+    }
+
+    @PostMapping("add-product")
+    public String addProduct(Product product) {
+        product.setId(nextId);
+        product.setCreatedAt(LocalDateTime.now());
+        products.add(product);
+        nextId++;
+        return "redirect:/products";
     }
 }

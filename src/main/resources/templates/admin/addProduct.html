@@ -8,9 +8,9 @@
     <h1>Add product</h1>
     <div th:replace="partials/navigation"></div>
 
-    <form>
+    <form method="post">
         <label for="name">Write product name</label>
-        <input id="name" name="name" placeholder="Write product name" />
+        <input id="name" name="name" required minlength="5" maxlength="20" placeholder="Write product name" />
         <br/>
 
         <label for="category">Select product category</label>
@@ -20,11 +20,11 @@
         <br/>
 
         <label for="price">Write product price</label>
-        <input id="price" name="price" min="1" max="100000" type="number" placeholder="Write product price" />
+        <input id="price" name="price" required min="1" max="100000" type="number" placeholder="Write product price" />
         <br/>
 
         <label for="content">Write product content</label>
-        <textarea id="content" name="content" rows="3">Write product content</textarea>
+        <textarea id="content" name="content" required minlength="5" maxlength="200" rows="3">Write product content</textarea>
         <br/>
 
         <button>Save</button>
