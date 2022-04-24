@@ -6,13 +6,16 @@ public class Article {
     private Long id;
     private String title;
     private String content;
+    private ArticleCategory category;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public Article(Long id, String title, String content, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Article(Long id, String title, String content, ArticleCategory category, LocalDateTime createdAt,
+                   LocalDateTime updatedAt) {
         this.id = id;
         this.title = title;
         this.content = content;
+        this.category = category;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -39,6 +42,14 @@ public class Article {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public ArticleCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(ArticleCategory category) {
+        this.category = category;
     }
 
     public LocalDateTime getCreatedAt() {
