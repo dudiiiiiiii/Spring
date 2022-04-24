@@ -49,7 +49,12 @@ public class ProductController {
                 return product.getPrice() >= priceFromTemp && product.getPrice() <= priceToTemp;
             })
             .toList();
+        model.addAttribute("categories",  ProductCategory.values());
         model.addAttribute("items", filtered);
+        model.addAttribute("priceFrom", priceFrom);
+        model.addAttribute("priceTo", priceTo);
+        model.addAttribute("name", name);
+        model.addAttribute("category", category);
         return "products";
     }
 }

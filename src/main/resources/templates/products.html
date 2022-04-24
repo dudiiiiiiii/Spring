@@ -8,6 +8,26 @@
     <h1>Products</h1>
     <div th:replace="partials/navigation"></div>
 
+    <form>
+        <label for="pf">Price from</label>
+        <input id="pf" th:value="${priceFrom}" name="pf" type="number" placeholder="Price from" min="1"/>
+
+        <label for="pt">Price to</label>
+        <input id="pt" th:value="${priceTo}" name="pt" type="number" placeholder="Price to" min="1"/>
+
+        <label for="n">Search name</label>
+        <input id="n" th:value="${name}" name="n" placeholder="Search name"/>
+
+        <label for="c">Select category</label>
+        <select id="c" name="c">
+            <option th:each="item: ${categories}" th:text="${item}" th:selected="${item == category}"></option>
+        </select>
+
+        <button>Filter</button>
+        <a href="/products">Clear</a>
+    </form>
+    <hr/>
+
     <div th:each="item: ${items}">
         <p>Name: <span th:text="${item.getName()}"></span></p>
         <p>Content: <span th:text="${item.getContent()}"></span></p>
