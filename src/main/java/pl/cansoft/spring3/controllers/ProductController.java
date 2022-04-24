@@ -25,7 +25,7 @@ public class ProductController {
     }
 
     @GetMapping("products")
-    public String blog(
+    public String products(
         @RequestParam(required = false, name = "pf") Integer priceFrom,
         @RequestParam(required = false, name = "pt") Integer priceTo,
         @RequestParam(required = false, name = "n") String name,
@@ -56,5 +56,11 @@ public class ProductController {
         model.addAttribute("name", name);
         model.addAttribute("category", category);
         return "products";
+    }
+
+    @GetMapping("add-product")
+    public String addProduct(Model model) {
+        model.addAttribute("categories",  ProductCategory.values());
+        return "admin/addProduct";
     }
 }

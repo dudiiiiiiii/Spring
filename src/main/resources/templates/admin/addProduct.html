@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add product</title>
+</head>
+<body>
+    <h1>Add product</h1>
+    <div th:replace="partials/navigation"></div>
+
+    <form>
+        <label for="name">Write product name</label>
+        <input id="name" name="name" placeholder="Write product name" />
+        <br/>
+
+        <label for="category">Select product category</label>
+        <select id="category" name="category">
+            <option th:each="item: ${categories}" th:text="${item}"></option>
+        </select>
+        <br/>
+
+        <label for="price">Write product price</label>
+        <input id="price" name="price" min="1" max="100000" type="number" placeholder="Write product price" />
+        <br/>
+
+        <label for="content">Write product content</label>
+        <textarea id="content" name="content" rows="3">Write product content</textarea>
+        <br/>
+
+        <button>Save</button>
+    </form>
+
+    <div th:replace="partials/footer"></div>
+</body>
+</html>
