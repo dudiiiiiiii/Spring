@@ -57,3 +57,14 @@ Zadanie 6:
 <li>Do produktu dodać pole obrazek (String image z adresem url do obrazka znalezionego w google)</li>
 <li>Wyświetlić obrazek w zakładce products (th:src)</li>
 </ul>
+Zadanie domowe (na 07.05.22):
+<ul>
+<li>Utworzyć enum ServiceCategory (REPAIR, ADVICE)</li>
+<li>Utworzyć klasę Service (pola: id, name, content, price, category (typ ServiceCategory), createdAt, updatedAt) na wzór Product</li>
+<li>Wygenerować getery i setery, konsruktor do klasy Service</li>
+<li>Utworzyć formularz pozwalający na dodanie usługi (pola: name, content, price, category)</li>
+<li>Utworzyć ServiceController będący kontrolerem umożliwiającym pokazanie listy usług oraz formularza dodawania usługi (/services i /add-service)</li>
+<li>Dodać w nawigacji możliwość uruchomienia strony "/services" i "/add-service"</li>
+<li>W ServiceController istnieje lista usług wypełniona na wzór ProductController</li>
+<li>Na widoku listy usług dodajemy możliwość filtrowania po kategorii oraz wyszukiwania po nazwie</li>
+</ul>
