@@ -31,3 +31,9 @@ Zadanie 3:
 <li>Fitrujemy po "pf" i "pt" (input number) oraz "n" i "c" (input text)</li>
 <li>*parametr "c" powinien działać jako select z listą rozwijaną renderowaną z enuma</li>
 </ul>
+Zadanie 4:
+<ul>
+<li>Na zwór formularza dodawania produktu utworzyć formularz dodawania artykułu (blog)</li>
+<li>Formularz wysyłamy metodą POST na @PostMapping - odbieramy dane jako Article</li>
+<li>Dodajemy do listy articles i przekierujemy na zakładkę blog</li>
+</ul>
