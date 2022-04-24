@@ -44,8 +44,8 @@ Linki do artykułów (24.04.22):
 Zadanie 5:
 <ul>
 <li>Utworzyć enum ArticleCategory (TECHNICAL, GUIDE, OTHER)</li>
-<li>Do klasy Article dodać pole category o typie ArticleCategory (nalezy uzupełnić listę w ArticleController o nowe pole)</li>
-<li>Wygenerować od nowa gettery i settery, kontruktor dla Article</li>
+<li>Do klasy Article dodać pole category o typie ArticleCategory</li>
+<li>Wygenerować od nowa gettery i settery, kontruktor dla Article (nalezy uzupełnić listę w ArticleController o nowe pole)</li>
 <li>Do zakładki blog dodać możliwość filtrowania po kategorii (enum ArticleCategory, na wzór kategorii w produktach)</li>
 <li>Do formularza dodawania nowego artykułu dodać możliwość wybrania kategorii z listy (wzór produkty)</li>
 <li>Formularz dodawania nowego artykułu zapisuje się wraz z kategorią</li>
