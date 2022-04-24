@@ -19,11 +19,11 @@ public class ProductController {
 
     public ProductController() {
         var now = LocalDateTime.now();
-        products.add(new Product(1L, "iPhone X", "Treść 1", 100, ProductCategory.PHONES, now, null));
-        products.add(new Product(2L, "MacBook Air", "Treść 2", 110, ProductCategory.COMPUTERS, now.minusMonths(2), null));
-        products.add(new Product(3L, "iMac", "Treść 3", 90, ProductCategory.COMPUTERS, now.minusMonths(2), null));
-        products.add(new Product(4L, "Apple Watch", "Treść 4", 200, ProductCategory.CLOCK, now.minusMonths(3), null));
-        products.add(new Product(5L, "iPhone 13", "Treść 5", 400, ProductCategory.PHONES, now.minusMonths(3).minusYears(1), null));
+        products.add(new Product(1L, "iPhone X", "https://f01.esfr.pl/foto/1/30170930097/9a870ff915be052854943f128785106a/gear4-d3o-bank-iphone-7-8-plus-czarny,30170930097_8.jpg", "Treść 1", 100, ProductCategory.PHONES, now, null));
+        products.add(new Product(2L, "MacBook Air", "https://f01.esfr.pl/foto/1/30170930097/9a870ff915be052854943f128785106a/gear4-d3o-bank-iphone-7-8-plus-czarny,30170930097_8.jpg","Treść 2", 110, ProductCategory.COMPUTERS, now.minusMonths(2), null));
+        products.add(new Product(3L, "iMac", "https://f01.esfr.pl/foto/1/30170930097/9a870ff915be052854943f128785106a/gear4-d3o-bank-iphone-7-8-plus-czarny,30170930097_8.jpg","Treść 3", 90, ProductCategory.COMPUTERS, now.minusMonths(2), null));
+        products.add(new Product(4L, "Apple Watch", "https://f01.esfr.pl/foto/1/30170930097/9a870ff915be052854943f128785106a/gear4-d3o-bank-iphone-7-8-plus-czarny,30170930097_8.jpg","Treść 4", 200, ProductCategory.CLOCK, now.minusMonths(3), null));
+        products.add(new Product(5L, "iPhone 13","https://f01.esfr.pl/foto/1/30170930097/9a870ff915be052854943f128785106a/gear4-d3o-bank-iphone-7-8-plus-czarny,30170930097_8.jpg", "Treść 5", 400, ProductCategory.PHONES, now.minusMonths(3).minusYears(1), null));
         nextId = 6L;
     }
 

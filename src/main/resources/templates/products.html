@@ -29,10 +29,21 @@
     <hr/>
 
     <div th:each="item: ${items}">
-        <p>Name: <span th:text="${item.getName()}"></span></p>
-        <p>Content: <span th:text="${item.getContent()}"></span></p>
-        <p>Price: <span th:text="${item.getPrice()}"></span> PLN</p>
-        <p>Created at: <span th:text="${#temporals.format(item.getCreatedAt(), 'dd-MM-yyyy HH:mm')}"></span></p>
+
+        <table>
+            <tr>
+                <td>
+                    <img style="width: 100px" alt="" th:src="${item.getImage()}" />
+                </td>
+                <td>
+                    <p>Name: <span th:text="${item.getName()}"></span></p>
+                    <p>Category: <span th:text="${item.getCategory()}"></span></p>
+                    <p>Content: <span th:text="${item.getContent()}"></span></p>
+                    <p>Price: <span th:text="${item.getPrice()}"></span> PLN</p>
+                    <p>Created at: <span th:text="${#temporals.format(item.getCreatedAt(), 'dd-MM-yyyy HH:mm')}"></span></p>
+                </td>
+            </tr>
+        </table>
         <hr/>
     </div>
 

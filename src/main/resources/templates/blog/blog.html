@@ -27,6 +27,7 @@
 
 	<div th:each="item: ${items}">
 		<p>Title: <span th:text="${item.getTitle()}"></span></p>
+		<p>Category: <span th:text="${item.getCategory()}"></span></p>
 		<p>Content: <span th:text="${item.getContent()}"></span></p>
 		<p>Created at: <span th:text="${#temporals.format(item.getCreatedAt(), 'dd-MM-yyyy HH:mm')}"></span></p>
 		<hr/>

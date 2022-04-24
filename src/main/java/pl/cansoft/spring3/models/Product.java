@@ -5,16 +5,18 @@ import java.time.LocalDateTime;
 public class Product {
     private Long id;
     private String name;
+    private String image;
     private String content;
     private Integer price;
     private ProductCategory category;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public Product(Long id, String name, String content, Integer price, ProductCategory category,
-                   LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Product(Long id, String name, String image, String content, Integer price,
+                   ProductCategory category, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
+        this.image = image;
         this.content = content;
         this.price = price;
         this.category = category;
@@ -36,6 +38,14 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getContent() {
