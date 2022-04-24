@@ -55,5 +55,5 @@ Zadanie 6:
 <li>Wyświelić na liście artykuów - kategorię artykułu</li>
 <li>Wyświelić na liście produktów - kategorię produktów</li>
 <li>Do produktu dodać pole obrazek (String image z adresem url do obrazka znalezionego w google)</li>
-<li>Wyświetlić obtrazek w zakładce products (th:href)</li>
+<li>Wyświetlić obrazek w zakładce products (th:href)</li>
 </ul>
